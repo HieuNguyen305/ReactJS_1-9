@@ -1,0 +1,31 @@
+====== Buổi 1 ======
+    - Component:
+        + Stateful Component: class
+        + Stateless Component: function
+
+- Baitap1 Component
+    - Header Component
+    - Content Component
+    - Sidebar Component
+    - Footer Component
+
+- Baitap2 Component
+    - Header
+    - Carousel
+    - WWD
+    - Contact
+    - ListItem
+        - Item
+        - Item
+        - Item
+    - Footer
+
+===== BUỔI 2 =====
+- Rendering Elements
+- Handling Events 
+- State
+
+===== BUỔI 3 =====
+- Communicate : Giao tiếp giữa các Component
+    + Props : truyền data từ Component cha ->  Component con
+    + Lifting State Up : Ngược lại Props
