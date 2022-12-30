@@ -9,7 +9,6 @@ export default class Child extends Component {
   render() {
     console.log(this.props);
     const { username, age } = this.props;
-    // const {  } = this.props;
 
     return (
       <div>

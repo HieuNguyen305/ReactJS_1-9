@@ -21,11 +21,20 @@
     - Footer
 
 ===== BUỔI 2 =====
-- Rendering Elements
-- Handling Events 
-- State
+- Rendering Elements {}
+- Handling Events : onClick
+- State : Nếu như state thay đổi => Component render lại lần mới
+- ListKey : Duyệt mảng theo keys
 
 ===== BUỔI 3 =====
-- Communicate : Giao tiếp giữa các Component
+- Communicate : Giao tiếp giữa các Component 
     + Props : truyền data từ Component cha ->  Component con
     + Lifting State Up : Ngược lại Props
+
+===== BUỔI 4 =====
+    - CART DEMO : LUYỆN LẠI PHẦN BUỔI 3
+
+===== BUỔI 5 =====
+    - USER MANAGEMENT 
+    - FORM 
+    LUYỆN LẠI PHẦN BUỔI 3 + BUỔI 4

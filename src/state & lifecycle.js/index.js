@@ -15,12 +15,13 @@ export default class State_Lifecycle extends Component {
       console.log(this.state.flag);
     });
   };
+  // Hàm setState asynchoronus, nên phải truyền param thứ 2 là 1 call back func để giải quyết async
 
   // handleLogOut = () => {
   //   this.setState({ flag: false });
   // };
 
-  // Nếu sử dụng hàm thì dùng dòng lệnh bind ở dòng 11
+  // Nếu sử dụng phương thức handleLogout(){} thì dùng dòng lệnh bind ở dòng 11, giống window.
   handleLogout() {
     this.setState({
       isLogin: false,

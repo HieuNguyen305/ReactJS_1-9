@@ -11,6 +11,7 @@ export default class Communicate extends Component {
       username: "CyberSoft",
       age: 5,
     };
+    // This binding is necessary to make `this` work in the callback
     this.eventClicksChangeUsername = this.eventClicksChangeUsername.bind(this);
   }
 
@@ -22,7 +23,7 @@ export default class Communicate extends Component {
   }
 
   handleresetUsername = (username) => {
-    console.log(username);
+    console.log(username); // log ra giá trị cybersoft dòng 6 child.js
     this.setState({
       username,
     });
@@ -46,10 +47,10 @@ export default class Communicate extends Component {
           <div className="row">
             <div className="col-md-4">
               <Child
-                username={username}
-                age={age}
-                user={this.state}
-                resetUsername={this.handleresetUsername}
+                username={username} // đặt tên props là username hoặc bất kì tên gì.
+                age={age} /* Bên trái đặt tên gì cũng được, còn bên phải thông tin cần truyền */
+                user={this.state} // truyền cả 1 object
+                resetUsername={this.handleresetUsername} //Lifting State Up
               />
             </div>
             <div className="col-md-4">
@@ -65,7 +66,7 @@ export default class Communicate extends Component {
               </Item>
             </div>
           </div>
-          {/* Bên trái đặt tên gì cũng được, còn bên phải thông tin cần truyền */}
+          
 
           <hr />
         </div>

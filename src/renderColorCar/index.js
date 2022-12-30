@@ -10,7 +10,8 @@ export default class RenderColorCar extends Component {
 
   changeColorCar = (urlIMG) => {
     this.setState({
-      //   urlIMG : urlIMG Key value giống nhau thì chọn 1 cái ở ES6
+      //   urlIMG : urlIMG 
+      // Key value giống nhau thì chọn 1 cái ở ES6
       urlIMG,
     });
   };

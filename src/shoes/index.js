@@ -25,6 +25,7 @@ export default class Shoes extends Component {
       );
     });
   };
+  
   render() {
     const { detail } = this.state;
     return (

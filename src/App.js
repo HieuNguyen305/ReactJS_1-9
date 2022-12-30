@@ -10,6 +10,8 @@ import ListKey from "./list-keys";
 import RenderingElements from "./rendering-elements";
 import Communicate from "./Communicate";
 import Shoes from "./shoes";
+import CartDemo from "./gioHangDemo/cartDemo";
+import Home from "./user-management";
 
 function App() {
   return (
@@ -18,7 +20,7 @@ function App() {
       {/* <Baitap2 /> */}
       {/* <RenderingElements />
       <HandlingEvents /> */}
-      <ExampleEvent />
+      {/* <ExampleEvent />
       <hr />
       <State_Lifecycle />
       <hr />
@@ -28,7 +30,10 @@ function App() {
       <hr />
       <Communicate />
       <hr />
-      <Shoes />
+      <Shoes /> */}
+      {/* <br /> */}
+      {/* <CartDemo /> */}
+      <Home />
     </div>
   );
 }
