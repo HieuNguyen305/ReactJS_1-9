@@ -38,3 +38,13 @@
     - USER MANAGEMENT 
     - FORM 
     LUYỆN LẠI PHẦN BUỔI 3 + BUỔI 4
+
+===== BUỔI 6 =====
+    - USER MANAGEMENT CONTINUTES
+    - SET UP FRAMEWORK REDUX : là 1 thư viện không phải có sẵn trong react JS
+
+===== BUỔI 7 =====
+    - USER MANAGEMENT REDUX
+
+===== BUỔI 8 =====
+    - CHIA COMPONENT THEO ROUTER

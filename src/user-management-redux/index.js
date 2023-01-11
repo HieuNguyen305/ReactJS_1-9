@@ -7,7 +7,6 @@ import data from "./data.json";
 class Home extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       userList: data,
       keyword: "",
@@ -15,12 +14,17 @@ class Home extends Component {
     };
   }
 
-  _findIndex = (id) => this.state.userList.findIndex((user) => user.id === id);
+  _findIndex = (id) => {
+    this.state.userList.findIndex((user) => {
+      return user.id === id;
+    });
+  };
+
   /**
    * Search
    */
   handleSearch = (keyword) => {
-    // console.log(keyword);
+    console.log(keyword);
     this.setState({
       keyword,
     });
@@ -30,7 +34,7 @@ class Home extends Component {
    * Xóa User từ User Item -> User -> Home
    */
   handleDelete = (userId) => {
-    // console.log(userId);
+    console.log(userId);
     const index = this._findIndex(userId);
     // return lại giá trị this.state.userList tham chiếu vào ô nhớ tạm, Xem lại video anh khải giảng 23/12/22
     if (index !== -1) {
@@ -46,34 +50,16 @@ class Home extends Component {
    * Submit User
    *  */
   handleSubmitUser = (user) => {
-    let userList = [...this.state.userList];
-    if (user.id) {
-      //Update
-      const index = this._findIndex(user.id);
-      if (index !== -1) {
-        userList[index] = user;
-      }
-    } else {
-      //Add
-      const userNew = { ...user, id: new Date().getTime() };
-      userList = [...this.state.userList, userNew];
-    }
+    const userNew = { ...user, id: new Date().getTime() };
+    let userList = [...this.state.userList, userNew];
+    console.log(userNew);
     this.setState({
       userList,
     });
   };
 
-  /**
-   * Edit User
-   */
-  handleEdit = (user) => {
-    // console.log(user);
-    this.setState({
-      userEdit: user,
-    });
-  };
   render() {
-    let { userList, keyword, userEdit } = this.state;
+    let { userList, keyword } = this.state;
     //filter
     userList = this.state.userList.filter((user) => {
       return user.fullname.toLowerCase().indexOf(keyword.toLowerCase()) !== -1;
@@ -88,21 +74,17 @@ class Home extends Component {
             className="btn btn-success"
             data-toggle="modal"
             data-target="#modelIdUser"
-            onClick={() => {
-              this.setState({
-                userEdit: null,
-              });
-            }}
           >
             Add User
           </button>
         </div>
         <Users
-          userList={userList}
-          getUserDelete={this.handleDelete}
-          getUserEdit={this.handleEdit}
+         // getUserDelete={this.handleDelete}
+           />
+        {/* userList={userList} của dòng 81 */} 
+        <Modal 
+        // getUserSubmit={this.handleSubmitUser} 
         />
-        <Modal getUserSubmit={this.handleSubmitUser} getUserEdit={userEdit} />
       </div>
     );
   }

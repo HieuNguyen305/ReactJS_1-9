@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-
+import { connect } from "react-redux";
 class Modal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: "",
       username: "",
       fullname: "",
       email: "",
@@ -30,39 +29,12 @@ class Modal extends Component {
   handleSubmit = (event) => {
     // chặn load lại trang web
     event.preventDefault();
-    this.props.getUserSubmit(this.state);
+    this.props.submitUser(this.state);
     // Close modal
     this.closeModal.current.click();
   };
 
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    console.log("componentWillReceiveProps", nextProps);
-    if (nextProps && nextProps.getUserEdit) {
-      const { id, username, fullname, email, phoneNumber, type } =
-        nextProps.getUserEdit;
-      this.setState({
-        // key : value giống nhau
-        id,
-        username,
-        fullname,
-        email,
-        phoneNumber,
-        type,
-      });
-    } else {
-      this.setState({
-        id: "",
-        username: "",
-        fullname: "",
-        email: "",
-        phoneNumber: "",
-        type: "USER",
-      });
-    }
-  }
-
   render() {
-    console.log(this.props.getUserEdit);
     return (
       <div
         className="modal fade"
@@ -75,9 +47,7 @@ class Modal extends Component {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title">
-                {this.props.getUserEdit ? "Edit User" : "ADD USER"}
-              </h5>
+              <h5 className="modal-title">ADD USER</h5>
               <button
                 type="button"
                 className="close"
@@ -97,7 +67,6 @@ class Modal extends Component {
                     className="form-control"
                     name="username"
                     onChange={this.handleOnChange}
-                    value={this.state.username}
                   />
                 </div>
                 <div className="form-group">
@@ -107,7 +76,6 @@ class Modal extends Component {
                     className="form-control"
                     name="fullname"
                     onChange={this.handleOnChange}
-                    value={this.state.fullname}
                   />
                 </div>
                 <div className="form-group">
@@ -117,7 +85,6 @@ class Modal extends Component {
                     className="form-control"
                     name="email"
                     onChange={this.handleOnChange}
-                    value={this.state.email}
                   />
                 </div>
                 <div className="form-group">
@@ -127,7 +94,6 @@ class Modal extends Component {
                     className="form-control"
                     name="phoneNumber"
                     onChange={this.handleOnChange}
-                    value={this.state.phoneNumber}
                   />
                 </div>
                 <div className="form-group">
@@ -136,7 +102,6 @@ class Modal extends Component {
                     className="form-control"
                     name="type"
                     onChange={this.handleOnChange}
-                    value={this.state.type}
                   >
                     <option>USER</option>
                     <option>VIP</option>
@@ -154,4 +119,16 @@ class Modal extends Component {
   }
 }
 
-export default Modal;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submitUser: (user) => {
+      const action = {
+        type: "SUBMIT",
+        payload: user,
+      };
+      dispatch(action);
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Modal);
