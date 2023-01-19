@@ -1,6 +1,7 @@
 ====== Buổi 1 ======
     - Component:
         + Stateful Component: class
+        + JSX : className = Boostrap Auto Css
         + Stateless Component: function
 
 - Baitap1 Component
@@ -48,3 +49,8 @@
 
 ===== BUỔI 8 =====
     - CHIA COMPONENT THEO ROUTER
+    - REACT ROUTER DOM
+
+===== BUỔI 9 =====
+    - FORM VALIDATION
+    - LIFECYCLE

@@ -29,6 +29,7 @@ import HomeTemPlates from "./templates/HomeTemPlates";
 import AdminTemplates from "./templates/AdminTemPlates";
 import UserPage from "./user-management-redux";
 import Detail from "./pages/Details/Detail";
+import FormValidation from "./pages/FormValidation";
 
 function App() {
   return (
@@ -50,7 +51,7 @@ function App() {
       <Shoes /> */}
       {/* <br /> */}
       {/* <CartDemo /> */}
-      <Home />
+      {/* <Home /> */}
       {/* <HomeRedux /> */}
       <BrowserRouter>
         {/* <header>
@@ -77,6 +78,7 @@ function App() {
             <Route path="detail">
               <Route path=":id" element={<Detail />}></Route>
             </Route>
+            <Route path="form-validation" element={<FormValidation />}></Route>
             <Route path="*" element={<Navigate to="" />}></Route>
           </Route>
           <Route path="admin" element={<AdminTemplates />}>
